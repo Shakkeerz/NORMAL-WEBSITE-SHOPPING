@@ -1,21 +1,19 @@
-import React from 'react'
-import { Route, Routes } from 'react-router'
-import About from '../pages/About'
-import Error404 from '../pages/Error404'
-import Home from '../pages/Home'
-import Products from '../pages/Products'
+import React from "react";
+import { Routes, Route } from "react-router-dom";
+import MoreBooks from "../components/MoreBooks";
+import Books from "../pages/Books";
+import PageNotFound from "../pages/PageNotFound";
 
 function AppRouter() {
   return (
-    <div>
-        <Routes>
-            <Route path='/' element={<Home/>} />
-            <Route path='/Products' element={<Products/>} />
-            <Route path='/About' element={<About/>} />
-            <Route path='*' element={<Error404/>} />
-        </Routes>
-    </div>
-  )
+    <>
+      <Routes>
+        <Route path="/" element={<Books/>} />
+        <Route path="/morebooks" element={<MoreBooks />} />
+        <Route path="*" element={<PageNotFound/>} />
+      </Routes>
+    </>
+  );
 }
 
-export default AppRouter
+export default AppRouter;
