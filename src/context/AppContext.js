@@ -17,7 +17,7 @@ const ContextProvider = ({ children }) => {
   const [BookLimit, setBookLimit] = useState(10);
 
   const fetchBooks = async (limit) => {
-    console.log(limit)
+    console.log(limit);
     console.log(BookLimit);
     setLoading(true);
     await axios
@@ -26,7 +26,10 @@ const ContextProvider = ({ children }) => {
         setBooks(res.data);
         setLoading(false);
       })
-      .catch(console.log(error));
+      .catch((error) => {
+        setLoading(false)
+        setError(error.message);
+      });
   };
 
   useEffect(() => {

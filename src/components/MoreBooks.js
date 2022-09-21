@@ -4,6 +4,7 @@ import { AppContext } from "../context/AppContext";
 import BookCard from "./BookCard";
 
 function MoreBooks() {
+    // infinite looping INTERSECTION OBSERVER
   const { books, loading, error } = useContext(AppContext);
   return (
     <div className="relative p-5">
