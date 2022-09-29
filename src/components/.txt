@@ -1,0 +1,9 @@
+return (
+                <div
+                  key={id}
+                  className={`flex items-center   justify-evenly p-10 gap-4  shadow-lg w-full`}
+                >
+                  <p>{title}</p>
+                  <div className="shadow-lg p-5">{icon}</div>
+                </div>
+              ); 

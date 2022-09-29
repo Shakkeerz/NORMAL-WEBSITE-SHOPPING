@@ -1,27 +1,22 @@
-import React from "react";
-import { Routes, Route } from "react-router-dom";
-import FullBookDetails from "../components/FullBookDetails";
-import MoreBooks from "../components/MoreBooks";
-import Params from "../components/Params";
-import Books from "../pages/Books";
-import PageNotFound from "../pages/PageNotFound";
+import React from 'react'
+import { Route, Router, Routes } from 'react-router'
+import Home from '../pages/Home'
+import PageNotFound from '../pages/PageNotFound'
+import Login from '../pages/Login'
 
 function AppRouter() {
   return (
-    <>
-      <Routes>
-        <Route path="/" element={<Books/>} />
-
-                {/* path="/morebooks/:book_count" */}
-        <Route path="/morebooks" element={<MoreBooks/>} />
+    
+        <div>
         
-        <Route path="*" element={<PageNotFound/>} />
-
-        <Route path="/params/:bookId" element={<Params/>}/>
-        <Route path='/fullbookdetails/:id' element={<FullBookDetails/>}/>
-      </Routes>
-    </>
-  );
+        <Routes>
+            <Route path='/' element={<Home/>}/>
+            <Route path="/login" element={<Login/>} />
+            <Route path="*" element={<PageNotFound/>}/>
+        </Routes>
+        </div>
+   
+  )
 }
 
-export default AppRouter;
+export default AppRouter
