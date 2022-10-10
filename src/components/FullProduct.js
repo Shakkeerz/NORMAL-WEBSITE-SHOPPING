@@ -5,12 +5,13 @@ import { ProductsContext } from "../context/ProductsContext";
 import { AiFillStar, AiOutlineInfoCircle } from "react-icons/ai";
 import { FcAbout } from "react-icons/fc";
 import { BsInfoSquareFill } from "react-icons/bs";
-import {MdLocationOn} from 'react-icons/md'
+import { MdLocationOn } from "react-icons/md";
+import {Loading} from "../components/paths";
 
 function FullProduct() {
   // VIEW FULL PRODUCT DETAILS FUNCTION
-  const product = useContext(ProductsContext);
-
+  const Product = useContext(ProductsContext);
+console.log("FULL",Product.product.loading)
   const { id } = useParams();
   const [productDetails, setProductDetails] = useState();
 
@@ -28,9 +29,10 @@ function FullProduct() {
 
   const num1 = 100;
   const num2 = 50;
-  const btnStyle = "py-4 px-8 text-white font-bold hover:text-slate-600"
+  const btnStyle = "py-4 px-8 text-white font-bold hover:text-slate-600";
   return (
     <>
+      {Product.product.loading && <h2 className="font-semibold text-center h-screen animate-pulse mt-10">Loading...</h2>}
       {productDetails?.map((detail) => {
         const {
           id,
@@ -49,25 +51,33 @@ function FullProduct() {
 
         return (
           <>
+        
             <div className="flex flex-col md:flex-row">
-                {/* PRODUCT IMAGE */}
+              {/* PRODUCT IMAGE */}
               <div className="w-full h-[400px] md:w-1/2 lg:w-1/3 md:h-[500px] ">
                 <div>
-                <img
-                  src={image_url}
-                  alt={name}
-                  className="w-full h-full object-contain"
-                />
+                  <img
+                    src={image_url}
+                    alt={name}
+                    className="w-full h-full object-contain"
+                  />
                 </div>
-               
 
                 <div className="flex gap-4 justify-center mt-5 lg:mt-0">
-                    <button className={`${btnStyle} bg-yellow-500 hover:bg-yellow-400`}>Add to Cart</button>
-                    <button className={`${btnStyle} bg-orange-500 hover:bg-orange-400`}>Buy Now</button>
+                  <button
+                    className={`${btnStyle} bg-yellow-500 hover:bg-yellow-400`}
+                  >
+                    Add to Cart
+                  </button>
+                  <button
+                    className={`${btnStyle} bg-orange-500 hover:bg-orange-400`}
+                  >
+                    Buy Now
+                  </button>
                 </div>
               </div>
 
-{/* PRODUCT DETAILS */}
+              {/* PRODUCT DETAILS */}
               <div className="w-full md:w-1/2 lg:w-2/3 p-4 mt-20">
                 <p className="text-gray-500 text-xl">{brand}</p>
                 <h1>{name}</h1>
@@ -105,11 +115,14 @@ function FullProduct() {
                 </div>
 
                 <p className="flex items-center bg-white w-fit  border-b-2 border-black mt-5 text-sm px-2">
-                    <MdLocationOn className="text-xl"/>
-                    <input type="number" className="py-4 outline-none px-2 text-gray-500  md:w-[300px]" placeholder="Enter delivery pincode"/>
-                    <button>Check</button>
+                  <MdLocationOn className="text-xl" />
+                  <input
+                    type="number"
+                    className="py-4 outline-none px-2 text-gray-500  md:w-[300px]"
+                    placeholder="Enter delivery pincode"
+                  />
+                  <button>Check</button>
                 </p>
-
               </div>
             </div>
           </>

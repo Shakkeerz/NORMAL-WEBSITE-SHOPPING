@@ -10,6 +10,8 @@ import Products from "./Products";
 import Url from "../api/Url";
 import ProductCard from "./ProductCard";
 import FullProduct from "./FullProduct";
+import Loading from "./Loading";
+import Error from "./Error";
 export {
   Home,
   PageNotFound,
@@ -23,4 +25,6 @@ export {
   Url,
   ProductCard,
   FullProduct,
+  Loading,
+  Error
 };

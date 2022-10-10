@@ -8,15 +8,22 @@ import { useContext } from "react";
 import { ProductsContext } from "../context/ProductsContext";
 
 function ProductCard({ product }) {
-    const {ratingFunction} = useContext(ProductsContext)
-    console.log(ratingFunction)
-  const { id, image_url, name, category, list_price, sale_price ,average_product_rating} = product;
+  const { ratingFunction } = useContext(ProductsContext);
+
+  const {
+    id,
+    image_url,
+    name,
+    category,
+    list_price,
+    sale_price,
+    average_product_rating,
+  } = product;
 
   const [isCartAdded, setIsCartAdded] = useState(false);
   const iconStyle = "text-3xl ";
-  const num = 4
+  const num = 4;
 
- 
   return (
     <div className="relative bg-slate-50">
       <Link to={`/product/${id}`} key={id}>
@@ -33,8 +40,8 @@ function ProductCard({ product }) {
             <h4>₹{sale_price}</h4>
             <h4 className="line-through text-gray-500">₹{list_price}</h4>
           </div>
-          <span>{<AiFillStar/> }</span>
-          <span>{ratingFunction}</span>
+          <span className="flex gap-3 items-center text-yellow-800">{<AiFillStar /> }{average_product_rating} </span>
+          {/* <span>{ratingFunction}</span> */}
         </div>
       </Link>
 

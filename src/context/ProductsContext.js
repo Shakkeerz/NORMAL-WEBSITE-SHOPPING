@@ -10,30 +10,36 @@ const ProductsContextProvider = ({ children }) => {
     data: [],
     limit: 30,
     error: "",
+    loading: false,
   });
 
   useEffect(() => {
+    setProduct({ loading: true });
     axios
       .get(`https://example-data.draftbit.com/products?_limit=${product.limit}`)
       .then((res) => {
-        setProduct({ data: res.data });
-      });
+        // setProduct({ data: res.data });
+        product.data = res.data;
+        setProduct({ data: res.data, loading: true });
+        console.log(product.data);
+      })
+      .catch((err) => setProduct({ error: err }));
   }, []);
 
-  const num = 4
-const ratingFunction=()=>{
-    const star = []
-   for(let i=0 ; i<=4 ; i++ ){
-    star.push('star')
-   }
-   return star
- }
-  useEffect(()=>{
-    ratingFunction()
-  },[])
+  const num = 4;
+  const ratingFunction = () => {
+    const star = [];
+    for (let i = 0; i <= 4; i++) {
+      star.push("star");
+    }
+    return star;
+  };
+  useEffect(() => {
+    ratingFunction();
+  }, []);
 
   return (
-    <ProductsContext.Provider value={{ product ,ratingFunction}}>
+    <ProductsContext.Provider value={{ product, ratingFunction }}>
       {children}
     </ProductsContext.Provider>
   );
