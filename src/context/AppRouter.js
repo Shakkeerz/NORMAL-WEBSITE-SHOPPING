@@ -1,8 +1,7 @@
 import React from 'react'
 import { Route, Router, Routes } from 'react-router'
-import Home from '../pages/Home'
-import PageNotFound from '../pages/PageNotFound'
-import Login from '../pages/Login'
+import {Home,PageNotFound,Login, Products,FullProduct} from '../components/paths'
+
 
 function AppRouter() {
   return (
@@ -12,6 +11,8 @@ function AppRouter() {
         <Routes>
             <Route path='/' element={<Home/>}/>
             <Route path="/login" element={<Login/>} />
+            <Route path='/products' element={<Products/>}/>
+            <Route path='/product/:id' element={<FullProduct/>} />
             <Route path="*" element={<PageNotFound/>}/>
         </Routes>
         </div>

@@ -3,16 +3,17 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App";
 import { BrowserRouter as Router } from "react-router-dom";
-import AppContextProvider from "./context/AppContext";
+import ProductsContextProvider from "./context/ProductsContext";
 
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <Router>
-      <AppContextProvider>
+      <ProductsContextProvider>
+
         <App />
-      </AppContextProvider>
+      </ProductsContextProvider>
     </Router>
   </React.StrictMode>
 );

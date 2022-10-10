@@ -22,18 +22,18 @@ function Footer() {
         </div>
         <div className="flex justify-between p-5">
           <ul>
-            {first_footer_links.map((li) => (
-              <li className={liStyle}>{li}</li>
+            {first_footer_links.map((li,index) => (
+              <li key={index} className={liStyle}>{li}</li>
             ))}
           </ul>
           <ul>
-            {second_footer_links.map((li) => (
-              <li className={liStyle}>{li}</li>
+            {second_footer_links.map((li,index) => (
+              <li key={index} className={liStyle}>{li}</li>
             ))}
           </ul>
           <ul>
-            {third_footer_links.map((li) => (
-              <li className={liStyle}>{li}</li>
+            {third_footer_links.map((li,index) => (
+              <li key={index} className={liStyle}>{li}</li>
             ))}
           </ul>
         </div>

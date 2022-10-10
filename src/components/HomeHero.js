@@ -2,10 +2,9 @@ import React from "react";
 import homeImage from "../data/images/jacek-dylag-jo8C9bt3uo8-unsplash.aebf97ff8a35927900f7.jpg";
 
 function HomeHero() {
-  const liStyle = "list-none text-3xl lg:text-6xl font-bold";
-  const liTextStyle = "text-sm md:text-xl lg:text-3xl font-normal "
-
-  const divStyle = "p-10 bg-slate-300 mb-4 text-center";
+  const liStyle = " list-none text-[20px] text-3xl lg:text-6xl font-bold";
+  const liTextStyle = "md:text-xl lg:text-3xl font-normal"
+  const divStyle = " p-3 md:p-10 shadow-lg  md:bg-slate-300 mb-4 text-center w-[180px] ";
   return (
     <section>
       <div className="md:h-96 overflow-hidden ">

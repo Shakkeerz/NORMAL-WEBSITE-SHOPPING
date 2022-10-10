@@ -1,17 +1,20 @@
-import Footer from "./pages/Footer";
-import Header from "./pages/Header";
+import {
+  Footer,
+  Header,
+  Home
+} from './components/paths'
+
 import AppRouter from "./context/AppRouter";
-import Home from "./pages/Home";
+
 
 function App() {
   return (
     <>
       <div className="font-mono w-4/5 m-auto bg-slate-100">
-        <Header />
-
-          <AppRouter>
-              <Home/>
-          </AppRouter>
+        <div className='mb-5'> <Header /></div>
+        <AppRouter>
+          <Home />
+        </AppRouter>
         <Footer />
       </div>
     </>

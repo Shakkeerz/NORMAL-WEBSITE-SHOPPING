@@ -1,9 +1,26 @@
-return (
-                <div
-                  key={id}
-                  className={`flex items-center   justify-evenly p-10 gap-4  shadow-lg w-full`}
-                >
-                  <p>{title}</p>
-                  <div className="shadow-lg p-5">{icon}</div>
-                </div>
-              ); 
+ const [product,setProduct] = useState({
+        data:[],
+        limit:30,
+        error:'',
+        loading:false
+    })
+
+    const fetchProducts=async()=>{
+        setProduct({loading:true})
+        await axios.get(`https://example-data.draftbit.com/products?_limit=${product.limit}`).then((res)=>{
+            setProduct({data:res.data})
+             console.log("product",product.data)
+            console.log("res",res.data)
+            setProduct({loading:false})
+        }).catch(err=>{
+            setProduct({error:err})
+            console.log("error",product.error)
+        })
+        
+    }
+    
+    useEffect(()=>{
+        fetchProducts()
+        
+  
+    },[])
