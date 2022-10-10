@@ -7,7 +7,7 @@ function Footer() {
   const second_footer_links = ["About Us", "Blog", "Patnership", "Career"];
   const third_footer_links = ["Twitter", "Youtube", "Instagram", "Linked In"];
 
-  const iconStyle = "text-lg hover:text-red-700 cursor-pointer"
+  const iconStyle = "text-lg hover:text-red-700 cursor-pointer hover:bg-white rounded"
   const liStyle = "hover:underline cursor-pointer mb-3"
   return (
     <>

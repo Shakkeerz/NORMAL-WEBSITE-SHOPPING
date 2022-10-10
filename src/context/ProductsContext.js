@@ -25,7 +25,7 @@ const ProductsContextProvider = ({ children }) => {
       })
       .catch((err) => setProduct({ error: err }));
   }, []);
-
+console.log(product.error)
   const num = 4;
   const ratingFunction = () => {
     const star = [];

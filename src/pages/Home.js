@@ -4,15 +4,11 @@ import HomeHero from "../components/HomeHero";
 import HomeMiddel from "../components/HomeMiddel";
 function Home() {
   return (
-    <div>
-      <HomeHero/>
-    <HomeMiddel/>
-    <HomeFinal/>
-
-      <section>News (api news atleast 6  )</section>
-      <section>Our teams and reviews</section>
-     
-    </div>
+    <>
+      <HomeHero />
+      <HomeMiddel />
+      <HomeFinal />
+    </>
   );
 }
 

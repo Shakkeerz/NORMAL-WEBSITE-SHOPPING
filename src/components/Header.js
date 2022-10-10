@@ -14,7 +14,7 @@ function Header() {
   }, []);
   return (
     <>
-      <header className="flex justify-between  shadow-lg items-center h-20 font-bold  relative z-20">
+      <header className="flex justify-between  shadow-lg items-center h-20 font-bold relative z-20">
         <div>logo</div>
         <div
           className="lg:hidden z-10 absolute right-28 cursor-pointer"
@@ -22,7 +22,7 @@ function Header() {
         >
           {/* className="text-3xl" */}
           {isMenuClick ? (
-            <AiOutlineMenu className="text-xl transition-all " />
+            <AiOutlineMenu className="text-xl" />
           ) : (
             <AiOutlineClose className="text-xl text-red-700 hover:text-red-900 hover:bg-slate-200" />
           )}
@@ -40,8 +40,9 @@ function Header() {
           <Link to="/products">
             <li className={liStyle}>Products</li>
           </Link>
-
-          <li className={liStyle}>About</li>
+          <Link to="/about">
+            <li className={liStyle}>About</li>
+          </Link>
         </ul>
 
         <Link
@@ -50,6 +51,9 @@ function Header() {
         >
           Login
         </Link>
+        {/* <Link to='/cart' className="absolute right-36">
+          <button>Cart</button>
+        </Link> */}
       </header>
     </>
   );

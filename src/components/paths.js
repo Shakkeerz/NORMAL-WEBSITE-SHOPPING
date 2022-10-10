@@ -12,6 +12,9 @@ import ProductCard from "./ProductCard";
 import FullProduct from "./FullProduct";
 import Loading from "./Loading";
 import Error from "./Error";
+import About from "./About";
+import Cart from "./Cart";
+
 export {
   Home,
   PageNotFound,
@@ -26,5 +29,7 @@ export {
   ProductCard,
   FullProduct,
   Loading,
-  Error
+  Error,
+  About,
+  Cart
 };
