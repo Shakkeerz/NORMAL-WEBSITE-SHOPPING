@@ -20,7 +20,7 @@ const ProductsContextProvider = ({ children }) => {
       .then((res) => {
         // setProduct({ data: res.data });
         product.data = res.data;
-        setProduct({ data: res.data, loading: true });
+        setProduct({ data: res.data, loading: false });
         console.log(product.data);
       })
       .catch((err) => setProduct({ error: err }));
